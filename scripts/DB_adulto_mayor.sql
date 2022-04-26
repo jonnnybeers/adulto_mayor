@@ -1,5 +1,5 @@
 CREATE TABLE ficha_programa (
-    id_ficha_progama INT PRIMARY KEY,
+    id_ficha_programa INT PRIMARY KEY,
     nombre_programa VARCHAR(50),
     vigencia DATE,
     fecha_digilenciamiento DATE
@@ -14,8 +14,8 @@ CREATE TABLE ficha_datos_adulto_mayor (
     primer_apellido VARCHAR(40),
     segundo_apellido VARCHAR(40),
     edad INT,
-    id_ficha_progama INT,
-    foreign key (id_ficha_progama) references ficha_progama(id_ficha_progama)
+    id_ficha_programa INT,
+    foreign key (id_ficha_programa) references ficha_programa(id_ficha_programa)
 );
 
 CREATE TABLE ficha_datos_ubicacion_contacto_adulto_mayor (
@@ -70,8 +70,8 @@ CREATE TABLE ficha_funcionario (
     cargo VARCHAR(30),
     registro_profesional VARCHAR(20),
     numero_identificacion VARCHAR(15),
-    id_ficha_progama INT,
-    foreign key (id_ficha_progama) references ficha_progama(id_ficha_progama)
+    id_ficha_programa INT,
+    foreign key (id_ficha_programa) references ficha_programa(id_ficha_programa)
 );
 
 CREATE TABLE historia_programa (
@@ -590,7 +590,7 @@ CREATE TABLE preguntas_escala_depresion (
     foreign key (id_escala_depresion) references escala_depresion(id_escala_depresion)
 );
 
-CREATE TABLE datos_funcionario (
+CREATE TABLE datos_funcionario_despresion (
     id_datos_funcionario INT PRIMARY KEY,
     nombre_funcionario VARCHAR(80),
     numero_identificacion_funcionario VARCHAR(15),
@@ -641,7 +641,7 @@ CREATE TABLE instrumento_datos_ambiente_servicios_vivienda (
     otro_tipo VARCHAR(15),
     numero_identificacion VARCHAR(15),
     ruido VARCHAR (10),
-    ilum inacion VARCHAR (10),
+    iluminacion VARCHAR (10),
     ventilacion VARCHAR (10),
     humedad VARCHAR (10),
     accesibilidad_escaleras VARCHAR (10),
@@ -764,7 +764,7 @@ CREATE TABLE ficha_psicologia_adulto_mayor (
     id_ficha_psicologia_adulto_mayor INT PRIMARY KEY,
     siente_deprimido VARCHAR(15),
     siente_desesperado VARCHAR(15),
-    olvida_dia_que_se encuentra VARCHAR(15),
+    olvida_dia_que_se_encuentra VARCHAR(15),
     olvida_oficios VARCHAR(15),
     olvida_objetos_personales VARCHAR(15),
     se_pierde_en_algun_lugar VARCHAR(15),
@@ -818,8 +818,8 @@ CREATE TABLE relaciones_interpersonales (
     hijos VARCHAR (20),
     nietos VARCHAR (20),
     otros_familiares VARCHAR (20),
-    vecinos VARCHAR (20),
-    amigos_no_vecinos VARCHAR (20),
+    vecinos2 VARCHAR (20),
+    amigos_no_vecinos2 VARCHAR (20),
     id_aspecto_social INT,
     foreign key (id_aspecto_social) references aspecto_social(id_aspecto_social)
 );
@@ -858,7 +858,7 @@ CREATE TABLE instrumento_actividad_ocio_adulto_mayor (
     foreign key (id_instrumento_programa) references instrumento_programa(id_instrumento_programa)
 );
 
-CREATE TABLE datos_funcionario (
+CREATE TABLE datos_funcionario_instrumento (
     id_datos_funcionario INT PRIMARY KEY,
     nombre_funcionario VARCHAR(80),
     numero_identificacion_funcionario VARCHAR(15),
@@ -872,7 +872,7 @@ CREATE TABLE visitas_programa (
     id_visitas_programa INT PRIMARY KEY,
     fecha_visita DATE,
     solicitante VARCHAR(60),
-    datos_visita VARCHAR(60),
+    datos_visita VARCHAR(60)
 );
 
 CREATE TABLE visitas_datos_adulto_mayor (
@@ -880,7 +880,7 @@ CREATE TABLE visitas_datos_adulto_mayor (
     nombre_completo VARCHAR(120),
     edad INT,
     id_visitas_programa INT,
-    foreign key (id_visitas_programa) references visitas_datos_adulto_mayor(id_visitas_programa)
+    foreign key (id_visitas_programa) references visitas_programa(id_visitas_programa)
 );
 
 CREATE TABLE datos_atiende_visita (
@@ -983,7 +983,7 @@ CREATE TABLE visitas_concepto(
 );
 
 CREATE TABLE informe_valoracion(
-    id_informe_valoracion PRIMARY KEY,
+    id_informe_valoracion INT PRIMARY KEY,
     id_visitas_programa INT,
     foreign key (id_visitas_programa) references visitas_datos_adulto_mayor(id_visitas_programa)
 );
@@ -1009,7 +1009,7 @@ CREATE TABLE descripcion_actividad (
 );
 
 CREATE TABLE visitas_funcionario (
-    id_ficha_funcionario INT PRIMARY KEY,
+    id_visitas_funcionario INT PRIMARY KEY,
     nombre_funcionario VARCHAR(80),
     cargo VARCHAR(30),
     registro_profesional VARCHAR(20),
