@@ -1,6 +1,6 @@
 <?php
 include("conexion.php");
-//$con=conectar();
+
 
 $fecha_apertura=$_POST['fecha_apertura'];
 $nombres_apellidos=$_POST['nombres_apellidos'];
@@ -140,13 +140,11 @@ $sql16="INSERT INTO intervencion_gerontologica (intervencion_gerontologica) VALU
 $sql17="INSERT INTO historia_funcionario (nombre_funcionario, numero_identificacion_funcionario, cargo, registro_profesional, aprobada_por) VALUES ('$nombre_funcionario','$numero_identificacion_funcionario','$cargo','$registro_profesional', '$aprobada_por')";
 
 
-//$query= mysqli_query($con,$sql);
 
-if($base->query($sql)){
-    Header("Location: Historia.html");
+
+$base->query($sql);
     
-}else {
-}
-?>
+
+Header("Location: Historia.html");
 
 
