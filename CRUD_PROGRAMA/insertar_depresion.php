@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("../includes/conexion.php");
 //$con=conectar();
 
 
@@ -34,7 +34,7 @@ $cargo=$_POST['cargo'];
 $registro_profesional=$_POST['registro_profesional'];
 
 
-$sql="INSERT INTO escala_depresion (nombre_usuario,zona,distrito,modalidad_atencion,lugar_atencion,edad_anual,edad_meses,fecha_aplicacion) VALUES ('$nombre_usuario','$zona','$distrito','$modalidad_atencion','$lugar_atencion','$edad_anual','$edad_meses','$fecha_aplicacion')";
+$sql="INSERT INTO escala_depresion (nombre_usuario,zona,distrito,modalidad_atencion,lugar_atencion,edad_anual,edad_meses,fecha_aplicacion) VALUES ($nombre_usuario,$zona,$distrito,$modalidad_atencion,$lugar_atencion,$edad_anual,$edad_meses,$fecha_aplicacion)";
 
 $sql2="INSERT INTO preguntas_escala_depresion (satisfecho_vida,intereses_actividades,vida_vacia,aburrido_frecuentemente,animo_todo_tiempo,preocupado_malo,feliz_tiempo,frecuencia_desamparado,cosas_nuevas,dia_semana_dos,hora_estamos_dos,puntuacion_dos,lugar_estamos,departamento_estamos, barrio_actual,ciudad_estamos,problemas_memoria,maravilloso_vivo,inutil_desprecio,lleno_energia,situacion_actual,total_todo) VALUES ('$satisfecho_vida','$intereses_actividades','$vida_vacia','$aburrido_frecuentemente','$animo_todo_tiempo','$preocupado_malo','$feliz_tiempo','$frecuencia_desamparado','$cosas_nuevas','$dia_semana_dos','$hora_estamos_dos','$puntuacion_dos','$lugar_estamos','$departamento_estamos', '$barrio_actual','$ciudad_estamos','$problemas_memoria','$maravilloso_vivo','$inutil_desprecio','$lleno_energia','$situacion_actual','$total_todo')";
 $sql3="INSERT INTO datos_funcionario (nombre_funcionario, numero_identificacion_funcionario, cargo, registro_profesional) VALUES ('$nombre_funcionario','$numero_identificacion_funcionario','$cargo','$registro_profesional')";

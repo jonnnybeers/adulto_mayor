@@ -1,8 +1,20 @@
 <?php
-$conn = new mysqli("localhost","root","","loginvaidroll7");
+
+try{
 	
-	if($conn->connect_errno)
-	{
-		echo "No hay conexión: (" . $conn->connect_errno . ") " . $conn->connect_error;
-	}
+	$base = new PDO('mysql:host=localhost; dbname=adulto_mayor', 'root', '');
+	
+	$base->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	$base->exec("SET CHARACTER SET utf8");
+	
+	echo "Conexion exitosa";
+	
+}catch(Exception $e){
+	
+	die('Error' . $e->getLine());
+	
+}
+
+
 ?>

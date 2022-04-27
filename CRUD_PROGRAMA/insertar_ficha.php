@@ -1,8 +1,9 @@
 <?php
-include("conexion.php");
+include("../includes/conexion.php");
+
 //$con=conectar();
 
-$nombre_programa=$_POST['nombre_programa'];
+$nombre_programa = $_POST['nombre_programa'];
 $vigencia=$_POST['vigencia'];
 $fecha_digilenciamiento=$_POST['fecha_digilenciamiento'];
 $tipo_identificacion=$_POST['tipo_identificacion'];
@@ -71,7 +72,7 @@ if($base->query($sql3)){
 }
 
 
-    Header("Location: Ficha.html");
+    Header("Location: ../ Ficha.html");
     
 ?>
 
