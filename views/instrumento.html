@@ -3,7 +3,7 @@
 <head>
 	
 	<title>Valoracion gerontologica</title>
-    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
     <link rel="icon" href="img/html.png">
     <meta charset="utf-8">
     <font face= "Time new roman">
@@ -41,7 +41,7 @@ Bio= Salud
 Psico = Estado de ánimo y satisfacción
 Soc= Relaciones interpersonales – participación social – familia-->  
 
- <form action="" class="formulario" id= "formulario">
+<form action="../php/create/instrumento.php" class="formulario" id="formulario" method="post">
 
 <h1> VALORACIÓN GERONTOLÓGICA </h1>
 
@@ -243,7 +243,7 @@ Otro: <input type="text" name="otro_tipo"><br>
 	<option value="no">No</option>
 </select>Luz<br> </label>
 <br>
-<label><select name="telefono" style="width: 100px";>
+<label><select name="telefono_servicios" style="width: 100px";>
 	 
 	<option value="si">Si</option>
 	<option value="no">No</option>
@@ -325,7 +325,7 @@ Demencia:
 	<option value="no">No</option>
 </select> 		
 
-Otras: <input type="text" name="otras_patologias"><br> 	
+Otras: <input type="text" name="otras"><br> 	
 
 <TABLE BORDER="1"width="67%" height="45">
 
@@ -583,7 +583,7 @@ Otros Hábitos:
 
 
 <tr><td>Caminar</td> 
-<td><select name="caminar" style="width: 80px";>
+<td><select name="caminar_funcionalidad" style="width: 80px";>
 	<option value="seleccione">Seleccione</option>
 	<option value="ninguna">Ninguna</option>
 	<option value="bastante">Bastante</option>
@@ -667,7 +667,7 @@ Colocar las edades en la casilla correspondiente
 </select></td></tr>
 
 <tr><td>¿Olvida el día de la semana que se encuentra?</td> 
-<td><select name="olvida_dia_que_se" style="width: 80px";>
+<td><select name="olvida_dia_que_se_encuentra" style="width: 80px";>
 	<option value="seleccione">Seleccione</option>
 	<option value="nunca">Nunca</option>
 	<option value="casi_nunca">Casi nunca</option>
@@ -754,7 +754,7 @@ Colocar las edades en la casilla correspondiente
 <h2><p><b>Relaciones familiares</b></p></h2>
 <br>
 Número de personas con las que vive: <input type="text" name="personas_viven">	
-¿Con quien vive usted?: <input type="text" name="nombre">  	
+¿Con quien vive usted?: <input type="text" name="con_quien_vive">  	
 ¿Tuvo hijos? 
 <select name="tuvo_hijos" style="width: 400px;">
 	<option value="seleccione">--Seleccione--</option>
@@ -936,7 +936,7 @@ Otros:<input type="text" name="otros_aportes">
 	<option value="no_sabe">Ns/Nr</option>
 </select></td></tr>
 <tr><td>Vecinos</td> 
-<td><select name="vecinos" style="width: 80px";>
+<td><select name="vecinos2" style="width: 80px";>
 	<option value="seleccione">Seleccione</option>
 	<option value="satisfecho">Satisfecho</option>
 	<option value="indiferente">Indiferente</option>
@@ -944,7 +944,7 @@ Otros:<input type="text" name="otros_aportes">
 	<option value="no_sabe">Ns/Nr</option>
 </select></td></tr>
 <tr><td>Amigos no vecinos</td> 
-<td><select name="amigos_no_vecinos" style="width: 80px";>
+<td><select name="amigos_no_vecinos2" style="width: 80px";>
 	<option value="seleccione">Seleccione</option>
 	<option value="satisfecho">Satisfecho</option>
 	<option value="indiferente">Indiferente</option>
@@ -1132,6 +1132,8 @@ Nombre: <input type="text" name="nombre_funcionario"><br>
 Cargo: <input type="text" name="cargo"><br> 
 
 Registro profesional: <input type="text" name="registro_profesional"><br> 
+Cédula: <input type="text" name="numero_identificacion_funcionario"><br> 
+
 
 
 

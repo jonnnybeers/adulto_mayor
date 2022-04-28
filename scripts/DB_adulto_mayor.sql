@@ -660,8 +660,6 @@ CREATE TABLE servicios_vivienda(
     gas BIT,
     alcantarillado BIT,
     material_vivienda VARCHAR (40),
-    id_instrumento_datos_ambiente_servicios_vivienda INT,
-    foreign key (id_instrumento_datos_ambiente_servicios_vivienda) references instrumento_datos_ambiente_servicios_vivienda(id_instrumento_datos_ambiente_servicios_vivienda)
 );
 
 CREATE TABLE aspecto_biologico(

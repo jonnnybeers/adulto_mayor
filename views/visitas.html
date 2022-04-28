@@ -4,7 +4,7 @@
 <head>
 	
 	<title>INFORME DE VISITA DOMICILIARIA</title>
-    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
     <link rel="icon" href="img/html.png">
     <font face= "Time new roman">
     <meta charset="utf-8">
@@ -31,7 +31,7 @@
    </div>
             </ul>
 
-<form action="" class="formulario" id= "formulario">
+		<form action="../php/create/visitas.php" class="formulario" id="formulario" method="post">
 
 <h1>INFORME DE VISITA DOMICILIARIA</h1>
 
@@ -52,7 +52,7 @@ Datos del quien realiza la visita: <input type="text" name="datos_visita"><br>
 
 Nombre completo: <input type="text" name="nombre_completo"><br>
 
-Edad:<input type="text" name="edad"><br>
+Edad:<input type="text" name="edad_sujeto_proteccion"><br>
 
 <h2>3. DATOS DE LA PERSONA QUE ATIENDE LA VISITA</h2>
 <br>
@@ -63,11 +63,11 @@ Tipo y número de documento de identidad:  <input type="text" name="tipo_numero_
 
 Fecha de Nacimiento: <input type="text" name="fecha_nacimiento"><br>  
 
-Edad: <input type="text" name="edad"><br>
+Edad: <input type="text" name="edad_persona"><br>
 
 Dirección de residencia: <input type="text" name="direccion_residencial"><br>                                                              
 
-Teléfono: <input type="text" name="telefono"><br>
+Teléfono: <input type="text" name="telefono_persona"><br>
 
 <h2>4. OBJETIVO:</h2>
 <br>
@@ -83,10 +83,10 @@ Teléfono: <input type="text" name="telefono"><br>
 
 <tr><td ><b>NOMBRES Y APELLIDOS</b></td> <td><b>PARENTESCO</b></td> <td width="58"><b>EDAD</b></td> <td><b>ESCOLARIDAD</b></td> <td><b>ESTADO CIVIL</b></td> <td><b>ACTIVIDAD</b></td> <td><b>OCUPACIÓN</b></td></tr>
 
-<tr> <td><input id="text"style="width: 280px; height: 30px" size="32" name="apariencia"></td> 
-<td><input id="text"style="width: 100px; height: 30px" size="32" name="apariencia"></td> 
-<td><input id="text"style="width: 40px; height: 30px" size="32" name="apariencia"></td>  
-<td><select name="tabla" style="width: 80px";>
+<tr> <td><input id="text"style="width: 280px; height: 30px" size="32" name="nombres_apellidos"></td> 
+<td><input id="text"style="width: 100px; height: 30px" size="32" name="parentesco"></td> 
+<td><input id="text"style="width: 40px; height: 30px" size="32" name="edad_familiar"></td>  
+<td><select name="escolaridad" style="width: 80px";>
 	<option value="si">--Seleccione--</option>
 	<option value="si">No escolarizado</option>
 	<option value="no">Primaria completa</option>
@@ -96,7 +96,7 @@ Teléfono: <input type="text" name="telefono"><br>
 	<option value="si">Universitario</option>
 	<option value="no">Posgrado</option>
 </select></td>    
-<td><select name="tabla" style="width: 80px";>
+<td><select name="estado_civil" style="width: 80px";>
 	<option value="si">--Seleccione--</option>
 	<option value="si">Soltero</option>
 	<option value="no">Casado</option>
@@ -105,7 +105,7 @@ Teléfono: <input type="text" name="telefono"><br>
 	<option value="no">Viudo</option>
 	
 </select></td>
-<td><select name="tabla" style="width: 80px";>
+<td><select name="actividad" style="width: 80px";>
 	<option value="si">--Seleccione--</option>
 	<option value="si">Trabajando</option>
 	<option value="no">Buscando Trabajo</option>
@@ -116,7 +116,7 @@ Teléfono: <input type="text" name="telefono"><br>
 	<option value="no">Incapacidad permanente para trabajar</option>
 	<option value="no">Sin actividad</option>
 </select></td>
-<td><select name="tabla" style="width: 80px";>
+<td><select name="ocupacion" style="width: 80px";>
 	<option value="si">--Seleccione--</option>
 	<option value="si">Empleado particular</option>
 	<option value="no">Empleado del Estado</option>
@@ -131,9 +131,9 @@ Teléfono: <input type="text" name="telefono"><br>
 
 </tr>
 
-<tr> <td><input id="text"style="width: 280px; height: 30px" size="32" name="apariencia"></td> 
-<td><input id="text"style="width: 100px; height: 30px" size="32" name="apariencia"></td> 
-<td><input id="text"style="width: 40px; height: 30px" size="32" name="apariencia"></td> 
+<tr> <td><input id="text"style="width: 280px; height: 30px" size="32" name="nombres_apellidos"></td> 
+<td><input id="text"style="width: 100px; height: 30px" size="32" name="parentesco"></td> 
+<td><input id="text"style="width: 40px; height: 30px" size="32" name="edad_familiar"></td> 
 <td><select name="tabla" style="width: 80px";>
 	<option value="si">--Seleccione--</option>
 	<option value="si">No escolarizado</option>
@@ -694,7 +694,7 @@ Otros espacios: <input type="text" name="otros_espacios"><br>
 <h2> 1.DATOS DE LA PERSONA A LA QUE SE REALIZÓ LA EVALUACIÓN </h2>
 <br>
 Nombre:	<input type="text" name="nombre_encuestado"><br>
-Cédula:	<input type="text" name="numero_identificacion_encuestado"><br>
+Cédula:	<input type="text" name="numero_identificacion"><br>
 Lugar de residencia: <input type="text" name="residencia_encuestado"><br>	
 Edad: <input type="text" name="edad_encuestado"><br>	
 Teléfono: <input type="text" name="telefono_encuestado"><br>
