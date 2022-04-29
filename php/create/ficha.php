@@ -1,6 +1,6 @@
 <?php
 
-include("../../includes/conexion.php");
+include("../includes/conexion.php");
 $id0 = 0;
 $nombre_programa = $_POST['nombre_programa'];
 $vigencia = $_POST['vigencia'];
